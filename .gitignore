@@ -20,3 +20,4 @@ huggingface/
 .idea/
 *.swp
 *.swo
+.env.example
