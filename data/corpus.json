@@ -1,0 +1,62 @@
+[
+  {
+    "id": "doc_001",
+    "title": "Distributed Consensus & Raft Protocol",
+    "content": "The Raft consensus algorithm is designed to manage replicated logs across a distributed cluster. It decomposes consensus into leader election, log replication, and safety invariants. Leaders maintain authority through periodic heartbeats. When election timeouts expire without heartbeats, follower nodes transition to candidate state and request votes.",
+    "category": "Distributed Systems"
+  },
+  {
+    "id": "doc_002",
+    "title": "Sliding-Window Counter Rate Limiting",
+    "content": "Sliding-window counter algorithms prevent burst traffic while smoothing request rates across window boundaries. By dividing time into sub-windows or interpolating request counts from the previous window using weights, it eliminates the 2x burst vulnerability found in fixed-window counter implementations. Commonly backed by Redis sorted sets or atomic integer counters.",
+    "category": "API Gateway & Security"
+  },
+  {
+    "id": "doc_003",
+    "title": "Cache Eviction: LRU vs 2Q and SRRIP",
+    "content": "Static Round-Robin Insertion Policy (SRRIP) improves upon classic Least Recently Used (LRU) cache eviction by preventing scan pollution. While LRU places every newly accessed item at the Most Recently Used head, SRRIP assigns intermediate re-reference prediction values (RRPVs), allowing transient one-hit sequential access data to be evicted rapidly without polluting active working sets.",
+    "category": "Computer Architecture & Caching"
+  },
+  {
+    "id": "doc_004",
+    "title": "LSM-Tree Storage Engines vs B-Trees",
+    "content": "Log-Structured Merge-trees (LSM-trees) optimize write throughput by transforming random disk writes into sequential append-only writes in memory (memtable). Periodically, memtables are flushed to immutable SSTables on disk. Compaction processes merge SSTables to reclaim deleted space and bound read amplification, unlike B-Trees which perform in-place updates.",
+    "category": "Database Internals"
+  },
+  {
+    "id": "doc_005",
+    "title": "Vector Search: HNSW Graph Indexing",
+    "content": "Hierarchical Navigable Small World (HNSW) graphs are state-of-the-art for approximate nearest neighbor (ANN) vector search. HNSW builds multi-layer graphs where upper layers feature long-range links for greedy coarse routing, while bottom layers contain dense local connections for fine-grained metric evaluation. It delivers logarithmic search complexity with high recall.",
+    "category": "Information Retrieval"
+  },
+  {
+    "id": "doc_006",
+    "title": "Microservices Circuit Breaker Pattern",
+    "content": "The Circuit Breaker pattern prevents cascading failures across distributed microservices. It tracks downstream service call failure rates across three states: Closed (normal traffic), Open (immediate fast-fail without callout), and Half-Open (trial requests to evaluate service recovery). It prevents thread pool exhaustion and systemic outages during downstream brownouts.",
+    "category": "Distributed Systems"
+  },
+  {
+    "id": "doc_007",
+    "title": "Zero-Copy Data Transfer with sendfile",
+    "content": "Zero-copy networking minimizes CPU overhead and memory bus saturation during data transfer. Using kernel syscalls like sendfile or splice in Linux, data is transferred directly from page cache into the network socket buffer without intermediate copying into user space memory, drastically reducing context switches and TLB flushes.",
+    "category": "Operating Systems & Networking"
+  },
+  {
+    "id": "doc_008",
+    "title": "PostgreSQL MVCC & VACUUM Operations",
+    "content": "PostgreSQL implements Multi-Version Concurrency Control (MVCC) by writing new tuple versions with xmin and xmax transaction IDs rather than overwriting existing rows. When updates or deletes occur, dead tuples accumulate on disk pages. VACUUM scans table pages, reclaims dead tuple storage, updates visibility maps, and prevents transaction ID wraparound.",
+    "category": "Database Internals"
+  },
+  {
+    "id": "doc_009",
+    "title": "Bloom Filters vs Cuckoo Filters",
+    "content": "Bloom filters use multiple independent hash functions over a bit array to test set membership with zero false negatives and tunable false positives. However, standard Bloom filters do not support item deletion. Cuckoo filters solve this by using cuckoo hashing over fingerprint buckets, supporting dynamic insertion, deletion, and higher space efficiency at low error rates.",
+    "category": "Data Structures"
+  },
+  {
+    "id": "doc_010",
+    "title": "Server-Sent Events (SSE) vs WebSockets",
+    "content": "Server-Sent Events (SSE) provide unidirectional real-time streaming from server to client over standard HTTP. Unlike WebSockets which require a dedicated protocol upgrade and bidirectional framing, SSE operates over HTTP/1.1 or HTTP/2, supports built-in reconnection with Last-Event-ID, and passes cleanly through corporate proxies and firewalls.",
+    "category": "API Gateway & Security"
+  }
+]

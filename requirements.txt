@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic
+sentence-transformers
+rank-bm25
+numpy
+groq
+python-dotenv

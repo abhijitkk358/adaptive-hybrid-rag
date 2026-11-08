@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Python cache & build files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Model cache folders
+.cache/
+huggingface/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
